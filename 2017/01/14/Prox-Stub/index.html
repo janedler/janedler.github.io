@@ -6,18 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2017 | LiJian&#39;s blog</title>
+  <title>Proxy-Stub | LiJian&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="李剑 janedler lijian">
-<meta property="og:type" content="website">
-<meta property="og:title" content="LiJian&#39;s blog">
-<meta property="og:url" content="http://yoursite.com/archives/2017/index.html">
+  <meta name="description" content="一、说明&amp;ensp; &amp;ensp; 1. Stub 跟 Proxy 是一对，俗称“代理-桩”，一般用在远程方法调用。&amp;ensp; &amp;ensp; 2. Proxy 相当于是拿在手里的遥控器，而 Stub 相当于长在电视机里的遥控接收器，它们有着一一对应的接口方法，但操作的方向刚好相反。&amp;ensp; &amp;ensp; 3. Proxy的接口供客户端程序调用，然后它内部会把信息包装好，以某种方式（比如 RM">
+<meta name="keywords" content="设计模式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Proxy-Stub">
+<meta property="og:url" content="http://yoursite.com/2017/01/14/Prox-Stub/index.html">
 <meta property="og:site_name" content="LiJian&#39;s blog">
-<meta property="og:description" content="李剑 janedler lijian">
+<meta property="og:description" content="一、说明&amp;ensp; &amp;ensp; 1. Stub 跟 Proxy 是一对，俗称“代理-桩”，一般用在远程方法调用。&amp;ensp; &amp;ensp; 2. Proxy 相当于是拿在手里的遥控器，而 Stub 相当于长在电视机里的遥控接收器，它们有着一一对应的接口方法，但操作的方向刚好相反。&amp;ensp; &amp;ensp; 3. Proxy的接口供客户端程序调用，然后它内部会把信息包装好，以某种方式（比如 RM">
 <meta property="og:locale" content="384850682@qq.com">
+<meta property="og:image" content="http://static.zybuluo.com/janedler/4bjdwkbgbma4pvx6udznvxru/F4724779-D8E6-4C52-9592-703E4FC9B581.png">
+<meta property="og:image" content="http://static.zybuluo.com/janedler/avu73sgw6ldkg859rt03lhjq/904A8E7F-50F8-43F7-822B-7395832D2E25.png">
+<meta property="og:updated_time" content="2017-12-07T15:15:40.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LiJian&#39;s blog">
-<meta name="twitter:description" content="李剑 janedler lijian">
+<meta name="twitter:title" content="Proxy-Stub">
+<meta name="twitter:description" content="一、说明&amp;ensp; &amp;ensp; 1. Stub 跟 Proxy 是一对，俗称“代理-桩”，一般用在远程方法调用。&amp;ensp; &amp;ensp; 2. Proxy 相当于是拿在手里的遥控器，而 Stub 相当于长在电视机里的遥控接收器，它们有着一一对应的接口方法，但操作的方向刚好相反。&amp;ensp; &amp;ensp; 3. Proxy的接口供客户端程序调用，然后它内部会把信息包装好，以某种方式（比如 RM">
+<meta name="twitter:image" content="http://static.zybuluo.com/janedler/4bjdwkbgbma4pvx6udznvxru/F4724779-D8E6-4C52-9592-703E4FC9B581.png">
   
     <link rel="alternative" href="/atom.xml" title="LiJian&#39;s blog" type="application/atom+xml">
   
@@ -135,150 +140,65 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Prox-Stub" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/08/02/HDFS原理/" class="archive-article-date">
-  	<time datetime="2017-08-03T01:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-03</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/02/HDFS原理/">HDFS原理</a>
+    <h1 class="article-title" itemprop="name">
+      Proxy-Stub
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">大数据</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/08/02/AndroidAutoLayout源码解析/" class="archive-article-date">
-  	<time datetime="2017-08-02T09:00:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/02/AndroidAutoLayout源码解析/">AndroidAutoLayout源码解析</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/17/ProGuard/" class="archive-article-date">
-  	<time datetime="2017-02-18T02:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/17/ProGuard/">ProGuard</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/01/14/Prox-Stub/" class="archive-article-date">
+        
+        <a href="/2017/01/14/Prox-Stub/" class="archive-article-date">
   	<time datetime="2017-01-15T02:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-15</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/01/14/Prox-Stub/">Proxy-Stub</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>一、说明</strong><br>&ensp; &ensp; 1. Stub 跟 Proxy 是一对，俗称“代理-桩”，一般用在远程方法调用。<br>&ensp; &ensp; 2. Proxy 相当于是拿在手里的遥控器，而 Stub 相当于长在电视机里的遥控接收器，它们有着一一对应的接口方法，但操作的方向刚好相反。<br>&ensp; &ensp; 3. Proxy的接口供客户端程序调用，然后它内部会把信息包装好，以某种方式（比如 RMI）传递给 Stub，而后者通过对应的接口作用于服务端系统，从而完成了“远程调用”。<br>&ensp; &ensp; 4. 一般不同进程间通信的时候都会用到这种模式。<br><a id="more"></a></p>
+<p><strong>二、应用场景</strong><br>&ensp; &ensp; Proxy类将特殊性接口转换到通用性接口<br>&ensp; &ensp; Stub类将通用性接口转为特殊性接口</p>
+<p><strong>二、举例</strong><br>&ensp; &ensp; 你去餐厅使用平板进行点餐；此家餐厅有很多菜系，日本菜、中国菜等等，每个菜系都有很多的人进行烹饪。你是用餐人，平板就是你的代理；如果你点的是中国菜，你不用去在乎你的菜由哪位中国厨师为你进行烹饪。你只需要选择中国菜中的菜肴等30分钟就可以享用了。<br><img src="http://static.zybuluo.com/janedler/4bjdwkbgbma4pvx6udznvxru/F4724779-D8E6-4C52-9592-703E4FC9B581.png" alt="F4724779-D8E6-4C52-9592-703E4FC9B581.png-136.4kB"><br>&ensp; &ensp; 在上面的类图中，Proxy以及Proxy的子类(ChineseCooker、JapaneseCooker)就相当于点餐用的平板，Service就相当于餐厅的厨房，Service收到Stub执行就执行对于的doCook方法进行做菜。<br>a、Service 服务类  用于具体执行功能<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Service</span> <span class="keyword">extends</span> <span class="title">Stub</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doCook</span><span class="params">(CookerEnum cookerEnum)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">switch</span> (cookerEnum)&#123;</span><br><span class="line">            <span class="keyword">case</span> CHINESE_COOKER:</span><br><span class="line">                System.out.println(<span class="string">"中国厨师开始做菜"</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> JAPANESE_COOKER:</span><br><span class="line">                System.out.println(<span class="string">"日本厨师开始做菜"</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>b、Stub 远程方法调用 这里用于调用Service服务类里面的方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Stub</span> <span class="keyword">extends</span> <span class="title">IBinder</span> <span class="keyword">implements</span> <span class="title">ICooker</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">doCook</span><span class="params">(CookerEnum cookerEnum)</span></span>;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onTransact</span><span class="params">(CookerEnum cookerEnum)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.doCook(cookerEnum);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>c、代理类<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Proxy</span> <span class="keyword">implements</span> <span class="title">ICooker</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> IBinder mBinder;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Proxy</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.mBinder = asInterface();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doCook</span><span class="params">(CookerEnum cookerEnum)</span> </span>&#123;</span><br><span class="line">        mBinder.onTransact(cookerEnum);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> Stub <span class="title">asInterface</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> Service();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>d、用户执行类<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ChineseCooker</span> <span class="keyword">extends</span> <span class="title">Proxy</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doCook</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.doCook(CookerEnum.CHINESE_COOKER);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>四、总结</strong><br>&ensp; &ensp; 用户只能调用Proxy里面的doCook函数，而Proxy里面的doCook函数就去调用Stub里面的onTransact函数，但是onTransact函数自动调用Service里面的doCook方法。<br>&ensp; &ensp; 使用Proxy-Stub可以减少特殊用户或者App对特殊性接口的需求（Service 为特殊接口）。框架设计者可以使用单一的通用型接口来形容特殊的接口。</p>
+<p><strong>五、Demo代码地址</strong> : <a href="https://github.com/janedler/ProxyStub.git" target="_blank" rel="noopener">https://github.com/janedler/ProxyStub.git</a></p>
+<p><strong>六、Proxy-Stub在Android中的应用</strong><br><img src="http://static.zybuluo.com/janedler/avu73sgw6ldkg859rt03lhjq/904A8E7F-50F8-43F7-822B-7395832D2E25.png" alt="904A8E7F-50F8-43F7-822B-7395832D2E25.png-2043.2kB"><br><br><br><br><br><br></p>
 
-        <div class="article-info info-on-right">
-          
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -290,19 +210,115 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2017/01/14/Prox-Stub/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2017/02/17/ProGuard/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          ProGuard
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2016/07/10/Dialog源码分析/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Android Dialog源码分析</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -325,8 +341,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,

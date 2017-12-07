@@ -6,18 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2017 | LiJian&#39;s blog</title>
+  <title>BroadcastReceiver源码分析 | LiJian&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="李剑 janedler lijian">
-<meta property="og:type" content="website">
-<meta property="og:title" content="LiJian&#39;s blog">
-<meta property="og:url" content="http://yoursite.com/archives/2017/index.html">
+  <meta name="description" content="LocalBroadcastManager&amp;ensp; &amp;ensp; You know that the data you are broadcasting won’t leave your app, so don’t need to worry about leaking private data.&amp;ensp; &amp;ensp; 你知道的数据广播不会留下你的应用程序,所以不需要担心泄漏私有数据。&amp;e">
+<meta name="keywords" content="Android">
+<meta property="og:type" content="article">
+<meta property="og:title" content="BroadcastReceiver源码分析">
+<meta property="og:url" content="http://yoursite.com/2015/12/22/BroadcastReceiver源码分析/index.html">
 <meta property="og:site_name" content="LiJian&#39;s blog">
-<meta property="og:description" content="李剑 janedler lijian">
+<meta property="og:description" content="LocalBroadcastManager&amp;ensp; &amp;ensp; You know that the data you are broadcasting won’t leave your app, so don’t need to worry about leaking private data.&amp;ensp; &amp;ensp; 你知道的数据广播不会留下你的应用程序,所以不需要担心泄漏私有数据。&amp;e">
 <meta property="og:locale" content="384850682@qq.com">
+<meta property="og:updated_time" content="2017-12-07T15:16:30.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LiJian&#39;s blog">
-<meta name="twitter:description" content="李剑 janedler lijian">
+<meta name="twitter:title" content="BroadcastReceiver源码分析">
+<meta name="twitter:description" content="LocalBroadcastManager&amp;ensp; &amp;ensp; You know that the data you are broadcasting won’t leave your app, so don’t need to worry about leaking private data.&amp;ensp; &amp;ensp; 你知道的数据广播不会留下你的应用程序,所以不需要担心泄漏私有数据。&amp;e">
   
     <link rel="alternative" href="/atom.xml" title="LiJian&#39;s blog" type="application/atom+xml">
   
@@ -135,74 +137,63 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-BroadcastReceiver源码分析" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/08/02/HDFS原理/" class="archive-article-date">
-  	<time datetime="2017-08-03T01:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-03</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/02/HDFS原理/">HDFS原理</a>
+    <h1 class="article-title" itemprop="name">
+      BroadcastReceiver源码分析
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">大数据</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/08/02/AndroidAutoLayout源码解析/" class="archive-article-date">
-  	<time datetime="2017-08-02T09:00:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-02</time>
+        
+        <a href="/2015/12/22/BroadcastReceiver源码分析/" class="archive-article-date">
+  	<time datetime="2015-12-22T09:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-12-22</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/02/AndroidAutoLayout源码解析/">AndroidAutoLayout源码解析</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>LocalBroadcastManager<br>&ensp; &ensp; You know that the data you are broadcasting won’t leave your app, so don’t need to worry about leaking private data.<br>&ensp; &ensp; 你知道的数据广播不会留下你的应用程序,所以不需要担心泄漏私有数据。<br>&ensp; &ensp; It is not possible for other applications to send these broadcasts to your app, so you don’t need to worry about having security holes they can exploit.<br>&ensp; &ensp; 是不可能给其他应用程序发送这些广播应用程序,所以您不需要担心有安全漏洞可以利用。<br>&ensp; &ensp; 广播类型：普通广播、有序广播（-1000到1000），异步广播<br><a id="more"></a><br>注册广播：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">IntentFilter myIntentFilter = <span class="keyword">new</span> IntentFilter();</span><br><span class="line">myIntentFilter.addAction(REFRESH_ENTRUST_DEFAULT_PRICE_ACTION);</span><br><span class="line">LocalBroadcastManager.getInstance(context.getApplicationContext()).registerReceiver(broadcastReceiver, myIntentFilter);</span><br><span class="line"></span><br><span class="line">LocalBroadcaseManager是一个单例模式</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> LocalBroadcastManager <span class="title">getInstance</span><span class="params">(Context context)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">synchronized</span> (mLock) &#123;</span><br><span class="line">            <span class="keyword">if</span> (mInstance == <span class="keyword">null</span>) &#123;</span><br><span class="line">                mInstance = <span class="keyword">new</span> LocalBroadcastManager(context.getApplicationContext());</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> mInstance;</span><br><span class="line">        &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure></p>
+<p>&ensp; &ensp; 在构造函数里面 实现了一个Handler内部类<br>&ensp; &ensp; 次内部类里面有一个关键的方法executePendingBroadcasts()<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="title">LocalBroadcastManager</span><span class="params">(Context context)</span> </span>&#123;</span><br><span class="line">        mAppContext = context;</span><br><span class="line">        mHandler = <span class="keyword">new</span> Handler(context.getMainLooper()) &#123;</span><br><span class="line"> </span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">handleMessage</span><span class="params">(Message msg)</span> </span>&#123;</span><br><span class="line">                <span class="keyword">switch</span> (msg.what) &#123;</span><br><span class="line">                    <span class="keyword">case</span> MSG_EXEC_PENDING_BROADCASTS:</span><br><span class="line">                        executePendingBroadcasts();</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    <span class="keyword">default</span>:</span><br><span class="line">                        <span class="keyword">super</span>.handleMessage(msg);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>&ensp; &ensp; executePendingBroadcasts()方法的实现<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">executePendingBroadcasts</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</span><br><span class="line">            BroadcastRecord[] brs = <span class="keyword">null</span>;</span><br><span class="line">            <span class="keyword">synchronized</span> (mReceivers) &#123;</span><br><span class="line">                <span class="keyword">final</span> <span class="keyword">int</span> N = mPendingBroadcasts.size();</span><br><span class="line">                <span class="keyword">if</span> (N &lt;= <span class="number">0</span>) &#123;</span><br><span class="line">                    <span class="keyword">return</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                brs = <span class="keyword">new</span> BroadcastRecord[N];</span><br><span class="line">                mPendingBroadcasts.toArray(brs);</span><br><span class="line">                mPendingBroadcasts.clear();</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;brs.length; i++) &#123;</span><br><span class="line">                BroadcastRecord br = brs[i];</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> j=<span class="number">0</span>; j&lt;br.receivers.size(); j++) &#123;</span><br><span class="line">                    br.receivers.get(j).receiver.onReceive(mAppContext, br.intent);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>&ensp; &ensp; 此方法里面是一个while死循环<br>&ensp; &ensp; private final ArrayList<broadcastrecord> mPendingBroadcasts= new ArrayList<broadcastrecord>();<br>&ensp; &ensp; 依次循环遍历mPendingBroadcasts里面保存的数据 至于mPendingBroadcasts里面究竟保存的什么数据 我们下面分析<br>&ensp; &ensp; 原来里面注册广播的代码实现：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">registerReceiver</span><span class="params">(BroadcastReceiver receiver, IntentFilter filter)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">synchronized</span> (mReceivers) &#123;</span><br><span class="line">            ReceiverRecord entry = <span class="keyword">new</span> ReceiverRecord(filter, receiver);</span><br><span class="line">            <span class="comment">//先查询是否有历史保存的广播 ps:重复注册广播不对导致广播重复</span></span><br><span class="line">            ArrayList&lt;IntentFilter&gt; filters = mReceivers.get(receiver);</span><br><span class="line">            <span class="keyword">if</span> (filters == <span class="keyword">null</span>) &#123;</span><br><span class="line">                filters = <span class="keyword">new</span> ArrayList&lt;IntentFilter&gt;(<span class="number">1</span>);</span><br><span class="line">                mReceivers.put(receiver, filters);</span><br><span class="line">            &#125;</span><br><span class="line">            filters.add(filter);</span><br><span class="line">           <span class="comment">//从这里可以看出 我们注册广播的时候 可以注册多个Action (就是我们所说的广播标示)</span></span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;filter.countActions(); i++) &#123;</span><br><span class="line">                String action = filter.getAction(i);</span><br><span class="line">                ArrayList&lt;ReceiverRecord&gt; entries = mActions.get(action);</span><br><span class="line">                <span class="keyword">if</span> (entries == <span class="keyword">null</span>) &#123;</span><br><span class="line">                    entries = <span class="keyword">new</span> ArrayList&lt;ReceiverRecord&gt;(<span class="number">1</span>);</span><br><span class="line">                    mActions.put(action, entries);</span><br><span class="line">                &#125;</span><br><span class="line">                entries.add(entry);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">```    </span><br><span class="line">&amp;ensp; &amp;ensp; 从注册广播的代码里面可以看出 广播的一系列的记录保存在ReceiverRecord</span><br><span class="line">```java</span><br><span class="line">ReceiverRecord(IntentFilter _filter, BroadcastReceiver _receiver) &#123;</span><br><span class="line">           filter = _filter;</span><br><span class="line">           receiver = _receiver;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></broadcastrecord></broadcastrecord></p>
+<p>&ensp; &ensp; 发送广播：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Intent intent = <span class="keyword">new</span> Intent(REFRESH_ENTRUST_DEFAULT_PRICE_ACTION);</span><br><span class="line">LocalBroadcastManager.getInstance(context.getApplicationContext()).sendBroadcast(intent);</span><br></pre></td></tr></table></figure></p>
+<p>&ensp; &ensp; 发送广播的源码：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">sendBroadcast</span><span class="params">(Intent intent)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">synchronized</span> (mReceivers) &#123;</span><br><span class="line">            <span class="keyword">final</span> String action = intent.getAction();</span><br><span class="line">            <span class="keyword">final</span> String type = intent.resolveTypeIfNeeded(</span><br><span class="line">                    mAppContext.getContentResolver());</span><br><span class="line">            <span class="keyword">final</span> Uri data = intent.getData();</span><br><span class="line">            <span class="keyword">final</span> String scheme = intent.getScheme();</span><br><span class="line">            <span class="keyword">final</span> Set&lt;String&gt; categories = intent.getCategories();</span><br><span class="line"> </span><br><span class="line">            <span class="keyword">final</span> <span class="keyword">boolean</span> debug = DEBUG ||</span><br><span class="line">                    ((intent.getFlags() &amp; Intent.FLAG_DEBUG_LOG_RESOLUTION) != <span class="number">0</span>);</span><br><span class="line">            <span class="keyword">if</span> (debug) Log.v(</span><br><span class="line">                    TAG, <span class="string">"Resolving type "</span> + type + <span class="string">" scheme "</span> + scheme</span><br><span class="line">                    + <span class="string">" of intent "</span> + intent);</span><br><span class="line"> </span><br><span class="line">            ArrayList&lt;ReceiverRecord&gt; entries = mActions.get(intent.getAction());</span><br><span class="line">           <span class="comment">//先通过action进行比对查找 如果没有查找到直接返回false</span></span><br><span class="line">            <span class="keyword">if</span> (entries != <span class="keyword">null</span>) &#123;</span><br><span class="line">                <span class="keyword">if</span> (debug) Log.v(TAG, <span class="string">"Action list: "</span> + entries);</span><br><span class="line"> </span><br><span class="line">                ArrayList&lt;ReceiverRecord&gt; receivers = <span class="keyword">null</span>;</span><br><span class="line">               <span class="comment">//这里用了一个for循环 我们可以理解为一个Action可能对应多个广播</span></span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;entries.size(); i++) &#123;</span><br><span class="line">                    ReceiverRecord receiver = entries.get(i);</span><br><span class="line">                    <span class="keyword">if</span> (debug) Log.v(TAG, <span class="string">"Matching against filter "</span> + receiver.filter);</span><br><span class="line"> </span><br><span class="line">                    <span class="keyword">if</span> (receiver.broadcasting) &#123;</span><br><span class="line">                        <span class="keyword">if</span> (debug) &#123;</span><br><span class="line">                            Log.v(TAG, <span class="string">"  Filter's target already added"</span>);</span><br><span class="line">                        &#125;</span><br><span class="line">                        <span class="keyword">continue</span>;</span><br><span class="line">                    &#125;</span><br><span class="line"> </span><br><span class="line">                    <span class="keyword">int</span> match = receiver.filter.match(action, type, scheme, data,</span><br><span class="line">                            categories, <span class="string">"LocalBroadcastManager"</span>);</span><br><span class="line">                    <span class="keyword">if</span> (match &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">                        <span class="keyword">if</span> (debug) Log.v(TAG, <span class="string">"  Filter matched!  match=0x"</span> +</span><br><span class="line">                                Integer.toHexString(match));</span><br><span class="line">                        <span class="keyword">if</span> (receivers == <span class="keyword">null</span>) &#123;</span><br><span class="line">                            receivers = <span class="keyword">new</span> ArrayList&lt;ReceiverRecord&gt;();</span><br><span class="line">                        &#125;</span><br><span class="line">                        receivers.add(receiver);</span><br><span class="line">                        receiver.broadcasting = <span class="keyword">true</span>;</span><br><span class="line">                    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                        <span class="keyword">if</span> (debug) &#123;</span><br><span class="line">                            String reason;</span><br><span class="line">                            <span class="keyword">switch</span> (match) &#123;</span><br><span class="line">                                <span class="keyword">case</span> IntentFilter.NO_MATCH_ACTION: reason = <span class="string">"action"</span>; <span class="keyword">break</span>;</span><br><span class="line">                                <span class="keyword">case</span> IntentFilter.NO_MATCH_CATEGORY: reason = <span class="string">"category"</span>; <span class="keyword">break</span>;</span><br><span class="line">                                <span class="keyword">case</span> IntentFilter.NO_MATCH_DATA: reason = <span class="string">"data"</span>; <span class="keyword">break</span>;</span><br><span class="line">                                <span class="keyword">case</span> IntentFilter.NO_MATCH_TYPE: reason = <span class="string">"type"</span>; <span class="keyword">break</span>;</span><br><span class="line">                                <span class="keyword">default</span>: reason = <span class="string">"unknown reason"</span>; <span class="keyword">break</span>;</span><br><span class="line">                            &#125;</span><br><span class="line">                            Log.v(TAG, <span class="string">"  Filter did not match: "</span> + reason);</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line"> </span><br><span class="line">                <span class="keyword">if</span> (receivers != <span class="keyword">null</span>) &#123;</span><br><span class="line">                    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;receivers.size(); i++) &#123;</span><br><span class="line">                        receivers.get(i).broadcasting = <span class="keyword">false</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                    mPendingBroadcasts.add(<span class="keyword">new</span> BroadcastRecord(intent, receivers));</span><br><span class="line">                    <span class="keyword">if</span> (!mHandler.hasMessages(MSG_EXEC_PENDING_BROADCASTS)) &#123;</span><br><span class="line">                        mHandler.sendEmptyMessage(MSG_EXEC_PENDING_BROADCASTS);</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>取消注册广播：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">unregisterReceiver</span><span class="params">(BroadcastReceiver receiver)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">synchronized</span> (mReceivers) &#123;</span><br><span class="line">            <span class="comment">//清除列表里面的对应的数据</span></span><br><span class="line">            ArrayList&lt;IntentFilter&gt; filters = mReceivers.remove(receiver);</span><br><span class="line">            <span class="keyword">if</span> (filters == <span class="keyword">null</span>) &#123;</span><br><span class="line">                <span class="keyword">return</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;filters.size(); i++) &#123;</span><br><span class="line">                IntentFilter filter = filters.get(i);</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> j=<span class="number">0</span>; j&lt;filter.countActions(); j++) &#123;</span><br><span class="line">                    String action = filter.getAction(j);</span><br><span class="line">                    ArrayList&lt;ReceiverRecord&gt; receivers = mActions.get(action);</span><br><span class="line">                    <span class="keyword">if</span> (receivers != <span class="keyword">null</span>) &#123;</span><br><span class="line">                        <span class="keyword">for</span> (<span class="keyword">int</span> k=<span class="number">0</span>; k&lt;receivers.size(); k++) &#123;</span><br><span class="line">                            <span class="keyword">if</span> (receivers.get(k).receiver == receiver) &#123;</span><br><span class="line">                                receivers.remove(k);</span><br><span class="line">                                k--;</span><br><span class="line">                            &#125;</span><br><span class="line">                        &#125;</span><br><span class="line">                        <span class="keyword">if</span> (receivers.size() &lt;= <span class="number">0</span>) &#123;</span><br><span class="line">                            mActions.remove(action);</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>ps:个人对广播的理解 其实广播就是内存中保存了一个单例类，每个广播由列表进行管理，如果添加了广播但是没有移除广播的话，广播会一直存在</p>
 
-        <div class="article-info info-on-right">
-          
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -214,95 +205,110 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2015/12/22/BroadcastReceiver源码分析/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/17/ProGuard/" class="archive-article-date">
-  	<time datetime="2017-02-18T02:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-18</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2015/12/29/Vector 源码解析/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Vector 源码解析
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/17/ProGuard/">ProGuard</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/01/14/Prox-Stub/" class="archive-article-date">
-  	<time datetime="2017-01-15T02:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/01/14/Prox-Stub/">Proxy-Stub</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">设计模式</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
 
 
           </div>
@@ -325,8 +331,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,

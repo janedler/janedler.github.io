@@ -6,18 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2017 | LiJian&#39;s blog</title>
+  <title>AndroidAutoLayout源码解析 | LiJian&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="李剑 janedler lijian">
-<meta property="og:type" content="website">
-<meta property="og:title" content="LiJian&#39;s blog">
-<meta property="og:url" content="http://yoursite.com/archives/2017/index.html">
+  <meta name="description" content="&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp; &amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;Android开发过程中，我们遇到的最大的问题就是UI的适配的问题，GitHub上面AndroidAutoLayout可以满足我们日常开发过程中UI适配的问题，本文就AndroidAutoLayout源码进行解析。">
+<meta name="keywords" content="Android">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AndroidAutoLayout源码解析">
+<meta property="og:url" content="http://yoursite.com/2017/08/02/AndroidAutoLayout源码解析/index.html">
 <meta property="og:site_name" content="LiJian&#39;s blog">
-<meta property="og:description" content="李剑 janedler lijian">
+<meta property="og:description" content="&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp; &amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;Android开发过程中，我们遇到的最大的问题就是UI的适配的问题，GitHub上面AndroidAutoLayout可以满足我们日常开发过程中UI适配的问题，本文就AndroidAutoLayout源码进行解析。">
 <meta property="og:locale" content="384850682@qq.com">
+<meta property="og:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b10000_10000&sec=1501667354&di=84844d393a476048c7bca4fee047cc64&src=http://img.qqzhi.com/upload/img_1_294670960D515451657_23.jpg">
+<meta property="og:updated_time" content="2017-12-07T15:38:55.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LiJian&#39;s blog">
-<meta name="twitter:description" content="李剑 janedler lijian">
+<meta name="twitter:title" content="AndroidAutoLayout源码解析">
+<meta name="twitter:description" content="&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp; &amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;Android开发过程中，我们遇到的最大的问题就是UI的适配的问题，GitHub上面AndroidAutoLayout可以满足我们日常开发过程中UI适配的问题，本文就AndroidAutoLayout源码进行解析。">
+<meta name="twitter:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b10000_10000&sec=1501667354&di=84844d393a476048c7bca4fee047cc64&src=http://img.qqzhi.com/upload/img_1_294670960D515451657_23.jpg">
   
     <link rel="alternative" href="/atom.xml" title="LiJian&#39;s blog" type="application/atom+xml">
   
@@ -135,74 +139,80 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-AndroidAutoLayout源码解析" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/08/02/HDFS原理/" class="archive-article-date">
-  	<time datetime="2017-08-03T01:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-03</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/02/HDFS原理/">HDFS原理</a>
+    <h1 class="article-title" itemprop="name">
+      AndroidAutoLayout源码解析
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">大数据</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/08/02/AndroidAutoLayout源码解析/" class="archive-article-date">
+        
+        <a href="/2017/08/02/AndroidAutoLayout源码解析/" class="archive-article-date">
   	<time datetime="2017-08-02T09:00:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-02</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/02/AndroidAutoLayout源码解析/">AndroidAutoLayout源码解析</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>&ensp;&ensp;&ensp;&ensp;<img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b10000_10000&amp;sec=1501667354&amp;di=84844d393a476048c7bca4fee047cc64&amp;src=http://img.qqzhi.com/upload/img_1_294670960D515451657_23.jpg" alt="cmd-markdown-logo"></p>
+<p>&ensp;&ensp;&ensp;&ensp;Android开发过程中，我们遇到的最大的问题就是UI的适配的问题，GitHub上面AndroidAutoLayout可以满足我们日常开发过程中UI适配的问题，本文就AndroidAutoLayout源码进行解析。<br><a id="more"></a><br><strong>源代码地址</strong>：<a href="https://github.com/hongyangAndroid/AndroidAutoLayout.git" target="_blank" rel="noopener">https://github.com/hongyangAndroid/AndroidAutoLayout.git</a><br><strong>基本的使用方法</strong>：<br>开发工具：<em>Android Studio</em><br>将autolayout进行引入<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dependencies &#123;</span><br><span class="line">    <span class="function">compile <span class="title">project</span><span class="params">(<span class="string">':autolayout'</span>)</span></span></span><br><span class="line"><span class="function">&#125;</span></span><br></pre></td></tr></table></figure></p>
+<p>第一步：<br>在你的项目的AndroidManifest中注明你的设计稿的尺寸<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta-data android:name=<span class="string">"design_width"</span> android:value=“<span class="number">1080</span><span class="string">"&gt;</span></span><br><span class="line"><span class="string">&lt;/meta-data&gt;</span></span><br><span class="line"><span class="string">&lt;meta-data android:name="</span>design_height<span class="string">" android:value=“1920"</span>&gt;</span><br><span class="line">&lt;/meta-data&gt;</span><br></pre></td></tr></table></figure></p>
+<p>第二步：<br>你有两种方法使用该适配框架<br><strong>1.让你的Activity继承自AutoLayoutActivity此方法的好处的xml布局不需要进行任何改动</strong><br><strong>2.在编写布局文件的时候需要进行如下改变</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">LinearLayout -&gt; AutoLinearLayout</span><br><span class="line">RelativeLayout -&gt; AutoRelativeLayout</span><br><span class="line">FrameLayout -&gt; AutoFrameLayout</span><br></pre></td></tr></table></figure></p>
+<p>在这里还需要介绍一个函数的调用<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UseDeviceSizeApplication</span> <span class="keyword">extends</span> <span class="title">Application</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate();</span><br><span class="line">       <span class="comment">//默认使用的高度是设备的可用高度，也就是不包括状态栏和底部的操作栏的，如果你希望拿设备的物理高度进行百分比化</span></span><br><span class="line">        AutoLayoutConifg.getInstance().useDeviceSize();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<hr>
+<p><strong>源码解析</strong><br>在AndroidAutoLayout中，一共定义了3中Layout<br>1、<em>AutoLinearLayout</em><br>2、<em>AutoRelativeLayout</em><br>3、<em>AutoFrameLayout</em><br>现在以AutoRelativeLayout为例开始进行AndroidAutoLayout框架的源码分析,其他2个实现也大同小异。<br>在AutoRelativeLayout中首先创建了AutoLayoutHelper对象<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">final</span> AutoLayoutHelper mHelper = <span class="keyword">new</span> AutoLayoutHelper(<span class="keyword">this</span>);</span><br></pre></td></tr></table></figure></p>
+<p>AutoLayoutHelper主要功能在于：解析XML里面需要进行PX装换的属性字段，并把它们保存到对应的实例类里面（TextSizeAttr、PaddingAttr、PaddingLeftAttr等等），最后把这些属性实体类都保存到了AutoLayoutInfo里面（维护着一个List集合队列）。<br>在AutoRelativeLayout中分别重写了<strong>generateLayoutParams</strong>和<strong>onMeasure</strong>方法（其他的方法暂不进行分析）<br>在generateLayoutParams函数中，返回了AndroidAutoLayout自己特有的LayoutParams<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">LayoutParams</span> <span class="keyword">extends</span> <span class="title">RelativeLayout</span>.<span class="title">LayoutParams</span> <span class="keyword">implements</span> <span class="title">AutoLayoutHelper</span>.<span class="title">AutoLayoutParams</span></span>&#123;</span><br><span class="line">        <span class="keyword">private</span> AutoLayoutInfo mAutoLayoutInfo;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">LayoutParams</span><span class="params">(Context c, AttributeSet attrs)</span></span>&#123;</span><br><span class="line">            <span class="keyword">super</span>(c, attrs);</span><br><span class="line">           <span class="comment">//这里通过调用AutoLayoutHelper里面的getAutoLayoutInfo函数，可以把AutoRelativeLayout的XML文件中需要进行PX装换的属性字段解析出来并保存到AutoLayoutInfo里面</span></span><br><span class="line">            mAutoLayoutInfo = AutoLayoutHelper.getAutoLayoutInfo(c, attrs);</span><br><span class="line">        &#125;</span><br><span class="line">        ……………这里省略很多代码………………...</span><br><span class="line">       <span class="comment">//这个返回AutoLayoutInfo对象</span></span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> AutoLayoutInfo <span class="title">getAutoLayoutInfo</span><span class="params">()</span></span>&#123;</span><br><span class="line">            <span class="keyword">return</span> mAutoLayoutInfo;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>在onMeasure函数中，主要调用了AutoLayoutHelper的ajustChildren函数，该函数主要作用是变量AutoRelativeLayout里面子控件，并把子控件XML里面需要进行PX装换的属性字段解析出来并保存到AutoLayoutInfo里面，并调用AutoLayoutInfo里面的fillAttrs方法，把PX正真的进行装换，后面会继续说到。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">adjustChildren</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        AutoLayoutConifg.getInstance().checkParams();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>, n = mHost.getChildCount(); i &lt; n; i++) &#123;</span><br><span class="line">            View view = mHost.getChildAt(i);</span><br><span class="line">            ViewGroup.LayoutParams params = view.getLayoutParams();</span><br><span class="line">            <span class="keyword">if</span> (params <span class="keyword">instanceof</span> AutoLayoutParams) &#123;</span><br><span class="line">                AutoLayoutInfo info =((AutoLayoutParams) params).getAutoLayoutInfo();</span><br><span class="line">                <span class="keyword">if</span> (info != <span class="keyword">null</span>) &#123;</span><br><span class="line">                    info.fillAttrs(view);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>我接下来介绍一下AutoLayoutHelper类的实现，关于AutoLayoutHelper的功能说明请看前面<br>在AutoLayoutHelper里面中定义了一系列需要进行px装换的属性字段，在AndroidAutoLayout框架里面也只会对这些XML属性字段进行解析和PX装换，后面括号里面是对应XML字段的属性实体类，在AutoLayoutInfo里面保存就是这些对XML解析过后的实体类<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">android.R.attr.textSize, （TextSizeAttr）         </span><br><span class="line">android.R.attr.padding,<span class="comment">// （PaddingAttr）</span></span><br><span class="line">android.R.attr.paddingLeft,<span class="comment">// （PaddingLeftAttr）</span></span><br><span class="line">android.R.attr.paddingTop,<span class="comment">// （PaddingTopAttr）</span></span><br><span class="line">android.R.attr.paddingRight,<span class="comment">// （PaddingRightAttr）</span></span><br><span class="line">android.R.attr.paddingBottom,<span class="comment">// （PaddingBottomAttr）</span></span><br><span class="line">android.R.attr.layout_width,<span class="comment">// （WidthAttr）</span></span><br><span class="line">android.R.attr.layout_height,<span class="comment">// （HeightAttr）</span></span><br><span class="line">android.R.attr.layout_margin,<span class="comment">// （MarginAttr）</span></span><br><span class="line">android.R.attr.layout_marginLeft,<span class="comment">// （MarginLeftAttr）</span></span><br><span class="line">android.R.attr.layout_marginTop,<span class="comment">// （MarginTopAttr）</span></span><br><span class="line">android.R.attr.layout_marginRight,<span class="comment">// （MarginRightAttr）</span></span><br><span class="line">android.R.attr.layout_marginBottom,<span class="comment">// （MarginBottomAttr）</span></span><br><span class="line">android.R.attr.maxWidth,<span class="comment">// （MaxWidthAttr）</span></span><br><span class="line">android.R.attr.maxHeight,<span class="comment">// （MaxHeightAttr）</span></span><br><span class="line">android.R.attr.minWidth,<span class="comment">// （MinWidthAttr）</span></span><br><span class="line">android.R.attr.minHeight,<span class="comment">// （MinHeightAttr）</span></span><br></pre></td></tr></table></figure></p>
+<p>在AutoLayoutHelper中定义了一个接口AutoLayoutParams 该接口定义了函数getAutoLayoutInfo，该函数返回AutoLayoutInfo对象<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">AutoLayoutParams</span> </span>&#123;</span><br><span class="line">        <span class="function">AutoLayoutInfo <span class="title">getAutoLayoutInfo</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>在AutoLayoutHelper中有一个很重要的函数getAutoLayoutInfo，该函数的功能在于解析XML里面需要进行数据装换的字段属性，并保存到相应的实体类中。并把实体类保存到AutoLayoutInfo里面。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> AutoLayoutInfo <span class="title">getAutoLayoutInfo</span><span class="params">(Context context, AttributeSet attrs)</span> </span>&#123;</span><br><span class="line">       <span class="comment">//后面我会对AutoLayoutInfo进行分析</span></span><br><span class="line">        AutoLayoutInfo info = <span class="keyword">new</span> AutoLayoutInfo();</span><br><span class="line">      <span class="comment">//AutoLayout_Layout 里面定义了一套基本的数据信息</span></span><br><span class="line">        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.AutoLayout_Layout);</span><br><span class="line">        <span class="keyword">int</span> baseWidth = a.getInt(R.styleable.AutoLayout_Layout_layout_auto_basewidth, <span class="number">0</span>);</span><br><span class="line">        <span class="keyword">int</span> baseHeight = a.getInt(R.styleable.AutoLayout_Layout_layout_auto_baseheight, <span class="number">0</span>);</span><br><span class="line">        a.recycle();</span><br><span class="line">        <span class="comment">//LL 我们应该很属性了 就是我之前说的那一套需要进行装换的属性字段</span></span><br><span class="line">        TypedArray array = context.obtainStyledAttributes(attrs, LL);</span><br><span class="line">        <span class="comment">// n 是17个</span></span><br><span class="line">        <span class="keyword">int</span> n = array.getIndexCount();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> index = array.getIndex(i);</span><br><span class="line">            <span class="comment">//通过DimenUtils.isPxVal来进行判断 我们所设置的值的单位是否是px  这里要说明一下AndroidAutoLayout只对PX进行转换</span></span><br><span class="line">            <span class="keyword">if</span> (!DimenUtils.isPxVal(array.peekValue(index))) <span class="keyword">continue</span>;</span><br><span class="line">            <span class="keyword">int</span> pxVal = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                <span class="comment">//获取某个dimen的值,如果是dp或sp的单位,将其乘以density,如果是px,则不乘  返回int</span></span><br><span class="line">                pxVal = array.getDimensionPixelOffset(index, <span class="number">0</span>);</span><br><span class="line">            &#125; <span class="keyword">catch</span> (Exception ignore)<span class="comment">//not dimension&#123;</span></span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">           <span class="comment">// 依次遍历LL里面的字段，并对应的保存在实体类中</span></span><br><span class="line">            <span class="keyword">switch</span> (index) &#123;</span><br><span class="line">                <span class="keyword">case</span> INDEX_TEXT_SIZE:</span><br><span class="line">                    info.addAttr(<span class="keyword">new</span> TextSizeAttr(pxVal, baseWidth, baseHeight));</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> INDEX_PADDING:</span><br><span class="line">                    info.addAttr(<span class="keyword">new</span> PaddingAttr(pxVal, baseWidth, baseHeight));</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                ……...这里省略了部分代码...…...</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        array.recycle();</span><br><span class="line">        <span class="keyword">return</span> info;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>PS:</strong><br>getDimension<br>获取某个dimen的值,如果是dp或sp的单位,将其乘以density,如果是px,则不乘返回float<br>getDimensionPixelOffset<br>获取某个dimen的值,如果是dp或sp的单位,将其乘以density,如果是px,则不乘返回int<br>getDimensionPixelSize<br>则不管写的是dp还是sp还是px,都会乘以denstiy.<br>在AutoLayoutHelper中还有一个很重要的函数onMeasure里面的adjustChildren<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">adjustChildren</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        AutoLayoutConifg.getInstance().checkParams();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>, n = mHost.getChildCount(); i &lt; n; i++) &#123;</span><br><span class="line">            View view = mHost.getChildAt(i);</span><br><span class="line">            ViewGroup.LayoutParams params = view.getLayoutParams();</span><br><span class="line">            <span class="keyword">if</span> (params <span class="keyword">instanceof</span> AutoLayoutParams) &#123;</span><br><span class="line">                AutoLayoutInfo info = ((AutoLayoutParams) params).getAutoLayoutInfo();</span><br><span class="line">                <span class="keyword">if</span> (info != <span class="keyword">null</span>) &#123;</span><br><span class="line">                    info.fillAttrs(view);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>在ajustChildren函数中，会通过getLayoutInfo获得到AutoLayoutInfo对象，并调用fillAttrs函数<br>到这里AutoLayoutHelper类的功能已经分析完毕了，我接下来对AutoLayoutInfo类进行分析。<br>AutoLayoutInfo类里面维护这一个List集合队列，该集合里面保存的是TextSizeAttr、PaddingAttr、PaddingLeftAttr等等一系列的属性，通过fillAttrs函数来遍历集合里面的数据，来进行PX的计算，具体看下面的分析介绍。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">fillAttrs</span><span class="params">(View view)</span></span>&#123;</span><br><span class="line">       <span class="keyword">for</span> (AutoAttr autoAttr : autoAttrs) &#123;</span><br><span class="line">            autoAttr.apply(view);</span><br><span class="line">       &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这里要特别说明一下关于属性实体类问题<br>TextSizeAttr、PaddingAttr、PaddingLeftAttr、PaddingTopAttr、PaddingRightAttr、PaddingBottomAttr、WidthAttr、HeightAttr、MarginAttr、MarginLeftAttr、MarginTopAttr、MarginRightAttr、MarginBottomAttr、MaxWidthAttr、MaxHeightAttr、MinWidthAttr、MinHeightAttr<br>这些类都继承与AutoAttr,并重写了如下的函数<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">abstract</span> <span class="keyword">int</span> <span class="title">attrVal</span><span class="params">()</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">abstract</span> <span class="keyword">boolean</span> <span class="title">defaultBaseWidth</span><span class="params">()</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">execute</span><span class="params">(View view, <span class="keyword">int</span> val)</span></span>;</span><br></pre></td></tr></table></figure></p>
+<p> attrVal用于标示该类的具体属性值 例如：TextSize：TEXTSIZE<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Attrs</span></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> WIDTH = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> HEIGHT = WIDTH &lt;&lt; <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> TEXTSIZE = HEIGHT &lt;&lt; <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> PADDING = TEXTSIZE &lt;&lt; <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> MARGIN = PADDING &lt;&lt; <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> MARGIN_LEFT = MARGIN &lt;&lt; <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> MARGIN_TOP = MARGIN_LEFT &lt;&lt; <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> MARGIN_RIGHT = MARGIN_TOP &lt;&lt; <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> MARGIN_BOTTOM = MARGIN_RIGHT &lt;&lt; <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> PADDING_LEFT = MARGIN_BOTTOM &lt;&lt; <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> PADDING_TOP = PADDING_LEFT &lt;&lt; <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> PADDING_RIGHT = PADDING_TOP &lt;&lt; <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> PADDING_BOTTOM = PADDING_RIGHT &lt;&lt; <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> MIN_WIDTH = PADDING_BOTTOM &lt;&lt; <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> MAX_WIDTH = MIN_WIDTH &lt;&lt; <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> MIN_HEIGHT = MAX_WIDTH &lt;&lt; <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> MAX_HEIGHT = MIN_HEIGHT &lt;&lt; <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>defaultBaseWidth返回的是一个布尔型数据类型，true代表以宽度来计算，false代表以高度来计算 具体代码在AutoAttr里面的apply函数中<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">val = defaultBaseWidth() ? getPercentWidthSize() : getPercentHeightSize();</span><br></pre></td></tr></table></figure></p>
+<p>execute这是一个执行函数，类似设置字体，设置宽度、高度等等都在这里实现，我就以TextSizeAttr设置字体为例来进行介绍<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">execute</span><span class="params">(View view, <span class="keyword">int</span> val)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">if</span> (!(view <span class="keyword">instanceof</span> TextView))</span><br><span class="line">           <span class="keyword">return</span>;</span><br><span class="line">       ((TextView) view).setIncludeFontPadding(<span class="keyword">false</span>);</span><br><span class="line">       ((TextView) view).setTextSize(TypedValue.COMPLEX_UNIT_PX, val);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>我继续讲AutoAttr里面的apply函数<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">apply</span><span class="params">(View view)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">boolean</span> log = view.getTag() != <span class="keyword">null</span> &amp;&amp; view.getTag().toString().equals(<span class="string">"auto"</span>);</span><br><span class="line">        <span class="keyword">if</span> (log) &#123;</span><br><span class="line">            L.e(<span class="string">" pxVal = "</span> + pxVal + <span class="string">" ,"</span> + <span class="keyword">this</span>.getClass().getSimpleName());</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> val;</span><br><span class="line">        <span class="keyword">if</span> (useDefault()) &#123;</span><br><span class="line">            val = defaultBaseWidth() ? getPercentWidthSize() : getPercentHeightSize();</span><br><span class="line">            <span class="keyword">if</span> (log) &#123;</span><br><span class="line">                L.e(<span class="string">" useDefault val= "</span> + val);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (baseWidth()) &#123;</span><br><span class="line">            val = getPercentWidthSize();</span><br><span class="line">            <span class="keyword">if</span> (log) &#123;</span><br><span class="line">                L.e(<span class="string">" baseWidth val= "</span> + val);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            val = getPercentHeightSize();</span><br><span class="line">            <span class="keyword">if</span> (log) &#123;</span><br><span class="line">                L.e(<span class="string">" baseHeight val= "</span> + val);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (val &gt; <span class="number">0</span>)</span><br><span class="line">            val = Math.max(val, <span class="number">1</span>);<span class="comment">//for very thin divider</span></span><br><span class="line">        execute(view, val);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>apply算是里面很重要的函数了吧，这里估计需要大篇幅的进行详细的介绍<br>首页我介绍一下useDefault函数<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">boolean</span> <span class="title">useDefault</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> !contains(baseHeight, attrVal()) &amp;&amp; !contains(baseWidth, attrVal());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>如果你是通过配置XML的方式来使用AndroidAutoLayout框架的话，baseHeight与baseWidth都是1，具体体现在AutoLayoutHelper里getAutoLayoutInfo函数，如果你是通过AutoUtils来进行设置PX的话，baseHeight与baseWidth就是你设置的参数了。<br>我这里假设是通过XML配置的方式来使用AndroidAutoLayout框架的话，baseHeight与baseWidth都是1，这里的flag就是attrVal函数返回的值，attrVal返回的值都是Attr类里面定义的值，除了WIDTH为1，其他的值都进行了左移位的处理。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> <span class="function"><span class="keyword">protected</span> <span class="keyword">boolean</span> <span class="title">contains</span><span class="params">(<span class="keyword">int</span> baseVal, <span class="keyword">int</span> flag)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> (baseVal &amp; flag) != <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>所以在TextSizeAttr中，useDefault就会为true,进而进行<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">val = defaultBaseWidth() ? getPercentWidthSize() : getPercentHeightSize();</span><br></pre></td></tr></table></figure></p>
+<p>在TextSizeAttr中defaultBaseWidth默认返回的是false,所以val返回的值是getPercentHeightSize<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">int</span> <span class="title">getPercentHeightSize</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> AutoUtils.getPercentHeightSizeBigger(pxVal);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">getPercentHeightSizeBigger</span><span class="params">(<span class="keyword">int</span> val)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> screenHeight = AutoLayoutConifg.getInstance().getScreenHeight();</span><br><span class="line">        <span class="keyword">int</span> designHeight = AutoLayoutConifg.getInstance().getDesignHeight();</span><br><span class="line">        <span class="keyword">int</span> res = val * screenHeight;</span><br><span class="line">        <span class="keyword">if</span> (res % designHeight == <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> res / designHeight;</span><br><span class="line">        &#125; <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> res / designHeight + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>结论 ：屏幕高度 ： 设计稿高度 = 屏幕显示高度 ：XML中设置的高度细心的你可能会发现 在AutoUtils里面还有一个计算高度的函数<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">getPercentHeightSize</span><span class="params">(<span class="keyword">int</span> val)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> screenHeight = AutoLayoutConifg.getInstance().getScreenHeight();</span><br><span class="line">        <span class="keyword">int</span> designHeight = AutoLayoutConifg.getInstance().getDesignHeight();</span><br><span class="line">        <span class="keyword">return</span> (<span class="keyword">int</span>) (val * <span class="number">1.0f</span> / designHeight * screenHeight);</span><br><span class="line">    &#125;</span><br><span class="line">他其实就是res%designHeight能整除的情况</span><br><span class="line">我也对getPercenHeightSize也进行一下分析</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">getPercentHeightSize</span><span class="params">(<span class="keyword">int</span> val)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> screenHeight = AutoLayoutConifg.getInstance().getScreenHeight();</span><br><span class="line">        <span class="keyword">int</span> designHeight = AutoLayoutConifg.getInstance().getDesignHeight();</span><br><span class="line">        <span class="keyword">return</span> (<span class="keyword">int</span>) (val * <span class="number">1.0f</span> / designHeight * screenHeight);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>结论 ：屏幕宽度 ： 设计稿宽度 = 屏幕显示宽度 ：XML中设置的宽度<br>我们回到AutoAttr里apply函数，这时我们得到了屏幕显示的高度或者宽度的数据了，我们再把执行execute函数进行最后的设置。整个任务就完成了。</p>
 
-        <div class="article-info info-on-right">
-          
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -214,95 +224,115 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2017/08/02/AndroidAutoLayout源码解析/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/17/ProGuard/" class="archive-article-date">
-  	<time datetime="2017-02-18T02:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-18</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2017/08/02/HDFS原理/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          HDFS原理
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/02/17/ProGuard/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">ProGuard</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/17/ProGuard/">ProGuard</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/01/14/Prox-Stub/" class="archive-article-date">
-  	<time datetime="2017-01-15T02:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/01/14/Prox-Stub/">Proxy-Stub</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">设计模式</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
 
 
           </div>
@@ -325,8 +355,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,

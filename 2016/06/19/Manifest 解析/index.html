@@ -6,18 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2017 | LiJian&#39;s blog</title>
+  <title>Manifest 解析 | LiJian&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="李剑 janedler lijian">
-<meta property="og:type" content="website">
-<meta property="og:title" content="LiJian&#39;s blog">
-<meta property="og:url" content="http://yoursite.com/archives/2017/index.html">
+  <meta name="description" content="&amp;ensp; &amp;ensp; AndroidManifest.xml 是每个android程序中必须的文件。它位于整个项目的根目录，描述了package中暴露的组件（activities, services, 等等），他们各自的实现类，各种能被处理的数据和启动位置。 除了能声明程序中的Activities, ContentProviders, Services, 和Intent Receivers,">
+<meta name="keywords" content="Android">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Manifest 解析">
+<meta property="og:url" content="http://yoursite.com/2016/06/19/Manifest 解析/index.html">
 <meta property="og:site_name" content="LiJian&#39;s blog">
-<meta property="og:description" content="李剑 janedler lijian">
+<meta property="og:description" content="&amp;ensp; &amp;ensp; AndroidManifest.xml 是每个android程序中必须的文件。它位于整个项目的根目录，描述了package中暴露的组件（activities, services, 等等），他们各自的实现类，各种能被处理的数据和启动位置。 除了能声明程序中的Activities, ContentProviders, Services, 和Intent Receivers,">
 <meta property="og:locale" content="384850682@qq.com">
+<meta property="og:updated_time" content="2017-12-07T15:16:09.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LiJian&#39;s blog">
-<meta name="twitter:description" content="李剑 janedler lijian">
+<meta name="twitter:title" content="Manifest 解析">
+<meta name="twitter:description" content="&amp;ensp; &amp;ensp; AndroidManifest.xml 是每个android程序中必须的文件。它位于整个项目的根目录，描述了package中暴露的组件（activities, services, 等等），他们各自的实现类，各种能被处理的数据和启动位置。 除了能声明程序中的Activities, ContentProviders, Services, 和Intent Receivers,">
   
     <link rel="alternative" href="/atom.xml" title="LiJian&#39;s blog" type="application/atom+xml">
   
@@ -135,74 +137,64 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Manifest 解析" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/08/02/HDFS原理/" class="archive-article-date">
-  	<time datetime="2017-08-03T01:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-03</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/02/HDFS原理/">HDFS原理</a>
+    <h1 class="article-title" itemprop="name">
+      Manifest 解析
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">大数据</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/08/02/AndroidAutoLayout源码解析/" class="archive-article-date">
-  	<time datetime="2017-08-02T09:00:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-02</time>
+        
+        <a href="/2016/06/19/Manifest 解析/" class="archive-article-date">
+  	<time datetime="2016-06-20T03:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-20</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/02/AndroidAutoLayout源码解析/">AndroidAutoLayout源码解析</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>&ensp; &ensp; AndroidManifest.xml 是每个android程序中必须的文件。它位于整个项目的根目录，描述了package中暴露的组件（activities, services, 等等），他们各自的实现类，各种能被处理的数据和启动位置。 除了能声明程序中的Activities, ContentProviders, Services, 和Intent Receivers,还能指定permissions和instrumentation（安全控制和测试）<br><a id="more"></a><br>&ensp; &ensp; 设置 android:noHistory=true后，该Activity在statck中不留历史痕迹。默认的值是false。<br>&ensp; &ensp; 举例说明，假设有三个Activity分别是：A，B，C。这三个Activity可以依次顺序启动下一个Activity，比如，在A中做一个Button，用户点击后跳转到B ; 同样，在B中也做一个Button，点击跳转到C。C不再做Button，只是一个用以演示的空壳Activity。<br>&ensp; &ensp; 在AndroidManifest.xml中配置B的属性为：android:noHistory=true,其他两个不做特别设置，仅仅作为一般的Activity处理。<br>&ensp; &ensp; 可以观察到，A启动后，从A跳转到B，再从B跳转到C，进入C后，此时如果按返回键，将直接进入A，而不是B。简单的跳转逻辑路线：<br>&ensp; &ensp; A –&gt; B –&gt; C –&gt; 按返回键 –&gt; A<br>&ensp; &ensp; 综上，可以这么理解android:noHistory=true对Activity行为的影响：当该Activity屏幕不可见时，相当于Android系统调用Activity的finish()方法结束了该Activity。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"utf-8"</span>?&gt;</span><br><span class="line"></span><br><span class="line">&lt;manifest&gt;</span><br><span class="line"></span><br><span class="line">    &lt;uses-permission /&gt;</span><br><span class="line">    &lt;permission /&gt;</span><br><span class="line">    &lt;permission-tree /&gt;</span><br><span class="line">    &lt;permission-group /&gt;</span><br><span class="line">    &lt;instrumentation /&gt;</span><br><span class="line">    &lt;uses-sdk /&gt;</span><br><span class="line">    &lt;uses-configuration /&gt; </span><br><span class="line">    &lt;uses-feature /&gt; </span><br><span class="line">    &lt;supports-screens /&gt; </span><br><span class="line">    &lt;compatible-screens /&gt; </span><br><span class="line">    &lt;supports-gl-texture /&gt; </span><br><span class="line"></span><br><span class="line">    &lt;application&gt;</span><br><span class="line"></span><br><span class="line">        &lt;activity&gt;</span><br><span class="line">            &lt;intent-filter&gt;</span><br><span class="line">                &lt;action /&gt;</span><br><span class="line">                &lt;category /&gt;</span><br><span class="line">                &lt;data /&gt;</span><br><span class="line">            &lt;/intent-filter&gt;</span><br><span class="line">            &lt;meta-data /&gt;</span><br><span class="line">        &lt;/activity&gt;</span><br><span class="line"></span><br><span class="line">        &lt;activity-alias&gt;</span><br><span class="line">            &lt;intent-filter&gt; . . . &lt;/intent-filter&gt;</span><br><span class="line">            &lt;meta-data /&gt;</span><br><span class="line">        &lt;/activity-alias&gt;</span><br><span class="line"></span><br><span class="line">        &lt;service&gt;</span><br><span class="line">            &lt;intent-filter&gt; . . . &lt;/intent-filter&gt;</span><br><span class="line">            &lt;meta-data/&gt;</span><br><span class="line">        &lt;/service&gt;</span><br><span class="line"></span><br><span class="line">        &lt;receiver&gt;</span><br><span class="line">            &lt;intent-filter&gt; . . . &lt;/intent-filter&gt;</span><br><span class="line">            &lt;meta-data /&gt;</span><br><span class="line">        &lt;/receiver&gt;</span><br><span class="line"></span><br><span class="line">        &lt;provider&gt;</span><br><span class="line">            &lt;grant-uri-permission /&gt;</span><br><span class="line">            &lt;meta-data /&gt;</span><br><span class="line">            &lt;path-permission /&gt;</span><br><span class="line">        &lt;/provider&gt;</span><br><span class="line"></span><br><span class="line">        &lt;uses-library /&gt;</span><br><span class="line"></span><br><span class="line">    &lt;/application&gt;</span><br><span class="line"></span><br><span class="line">&lt;/manifest&gt;</span><br></pre></td></tr></table></figure></p>
+<p>&lt;application&gt;<br>```java</p>
+<p><application android:allowtaskreparenting="["true"" |="" "false"]="" android:allowbackup="["true"" android:backupagent="string" android:banner="drawable resource" android:debuggable="["true"" android:description="string resource" android:enabled="["true"" android:hascode="["true"" android:hardwareaccelerated="["true"" android:icon="drawable resource" android:isgame="["true"" android:killafterrestore="["true"" android:largeheap="["true"" android:label="string resource" android:logo="drawable resource" android:managespaceactivity="string" android:name="string" android:permission="string" android:persistent="["true"" android:process="string" android:restoreanyversion="["true"" android:requiredaccounttype="string" android:restrictedaccounttype="string" android:supportsrtl="["true"" android:taskaffinity="string" android:testonly="["true"" android:theme="resource or theme" android:uioptions="["none"" "splitactionbarwhennarrow"]="" android:usescleartexttraffic="["true"" android:vmsafemode="["true""><br>    . . .<br></application><br><code>`包含:</code><activity> </activity></p>
+<p><activity-alias> </activity-alias></p>
+<p><meta-data> </meta-data></p>
+<p><service> </service></p>
+<p><receiver> </receiver></p>
+<p><provider> </provider></p>
+<p><uses-library>``<br>自身的属性:<br>android:allowBackup<br>风险浅析:<a href="http://www.freebuf.com/articles/terminal/60778.html" target="_blank" rel="noopener">http://www.freebuf.com/articles/terminal/60778.html</a><br>Whether to allow the application to participate in the backup and restore infrastructure. If this attribute is set to false, no backup or restore of the application will ever be performed, even by a full-system backup that would otherwise cause all application data to be saved via adb. The default value of this attribute is true.<br>是否允许应用参与备份和还原数据，如果属性设置为false,则不允许应用备份与还原数据。如果设置成了true，就可以通过adb命名把应用数据给还原出来，这个属性默认设置的是true<br>android:backupAgent<br>备份代理，如果用户使用还原手机出厂设置的功能，系统就会被还原，我们可以通过这个属性来保持app的数据到云端，等用户再次使用我们的软件的时候，我们就可以还原用户数据，但是不建议使用，会导致数据不安全.<br>android:debuggable<br>应用是否可以进行调试，当运行在用户设备上面的是应该设置为true,默认为false<br>android:description<br>app的描述<br>android:isGame<br>Whether or not the application is a game. The system may group together applications classifed as games or display them separately from other applications.<br>The default is false.<br>android:hardwareAccelerated<br>是否开启硬件加速 3.0以后<br>android:killAfterRestore<br>是否复位需要重启<br>android:supportsRtl<br>是否支持RTL(从右向左)布局，</uses-library></p>
 
-        <div class="article-info info-on-right">
-          
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -214,95 +206,115 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2016/06/19/Manifest 解析/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/17/ProGuard/" class="archive-article-date">
-  	<time datetime="2017-02-18T02:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-18</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2016/07/10/Dialog源码分析/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Android Dialog源码分析
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/04/17/Volley 源码解析/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Volley 源码解析</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/17/ProGuard/">ProGuard</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/01/14/Prox-Stub/" class="archive-article-date">
-  	<time datetime="2017-01-15T02:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/01/14/Prox-Stub/">Proxy-Stub</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">设计模式</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
 
 
           </div>
@@ -325,8 +337,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,

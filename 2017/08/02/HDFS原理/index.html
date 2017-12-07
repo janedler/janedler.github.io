@@ -6,18 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2017 | LiJian&#39;s blog</title>
+  <title>HDFS原理 | LiJian&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="李剑 janedler lijian">
-<meta property="og:type" content="website">
-<meta property="og:title" content="LiJian&#39;s blog">
-<meta property="og:url" content="http://yoursite.com/archives/2017/index.html">
+  <meta name="description" content="一、HDFS作用    HDFS(Hadoop Distributed File System)是Hadoop项目的核心子项目，是分布式计算中数据存储管理的基础，是基于流数据模式访问和处理超大文件的需求而开发的。它所具备的高容错性、高可靠性、高可扩展性、高吞吐率等特征为海量数据提供了不怕故障的存储。为超大数据集的应用带来了很多便利。">
+<meta name="keywords" content="大数据">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HDFS原理">
+<meta property="og:url" content="http://yoursite.com/2017/08/02/HDFS原理/index.html">
 <meta property="og:site_name" content="LiJian&#39;s blog">
-<meta property="og:description" content="李剑 janedler lijian">
+<meta property="og:description" content="一、HDFS作用    HDFS(Hadoop Distributed File System)是Hadoop项目的核心子项目，是分布式计算中数据存储管理的基础，是基于流数据模式访问和处理超大文件的需求而开发的。它所具备的高容错性、高可靠性、高可扩展性、高吞吐率等特征为海量数据提供了不怕故障的存储。为超大数据集的应用带来了很多便利。">
 <meta property="og:locale" content="384850682@qq.com">
+<meta property="og:image" content="http://static.zybuluo.com/janedler/thqx2l0vfwvmdlqx50sdc23j/43A1788C-5D58-442B-9664-1659FB685F4A.jpg">
+<meta property="og:image" content="http://static.zybuluo.com/janedler/6sth8mqivlecsl085mleglev/BA5DD807-078C-4DEA-A7CA-A5F160FC288D.png">
+<meta property="og:image" content="http://static.zybuluo.com/janedler/9emw510hpqs9azp40ozl7gfn/F6AAAF4A-647E-40C9-BE07-687764E8D1DF.jpg">
+<meta property="og:image" content="http://static.zybuluo.com/janedler/rrwenlios2ibi46o0qeb9f9d/ED95FA52-06E5-46CB-82B3-4E17B028D099.jpg">
+<meta property="og:updated_time" content="2017-12-07T15:38:55.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LiJian&#39;s blog">
-<meta name="twitter:description" content="李剑 janedler lijian">
+<meta name="twitter:title" content="HDFS原理">
+<meta name="twitter:description" content="一、HDFS作用    HDFS(Hadoop Distributed File System)是Hadoop项目的核心子项目，是分布式计算中数据存储管理的基础，是基于流数据模式访问和处理超大文件的需求而开发的。它所具备的高容错性、高可靠性、高可扩展性、高吞吐率等特征为海量数据提供了不怕故障的存储。为超大数据集的应用带来了很多便利。">
+<meta name="twitter:image" content="http://static.zybuluo.com/janedler/thqx2l0vfwvmdlqx50sdc23j/43A1788C-5D58-442B-9664-1659FB685F4A.jpg">
   
     <link rel="alternative" href="/atom.xml" title="LiJian&#39;s blog" type="application/atom+xml">
   
@@ -135,36 +142,61 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-HDFS原理" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/08/02/HDFS原理/" class="archive-article-date">
-  	<time datetime="2017-08-03T01:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-03</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/02/HDFS原理/">HDFS原理</a>
+    <h1 class="article-title" itemprop="name">
+      HDFS原理
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/08/02/HDFS原理/" class="archive-article-date">
+  	<time datetime="2017-08-03T01:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="http://static.zybuluo.com/janedler/thqx2l0vfwvmdlqx50sdc23j/43A1788C-5D58-442B-9664-1659FB685F4A.jpg" alt="43A1788C-5D58-442B-9664-1659FB685F4A.jpg-22.2kB"></p>
+<p><strong>一、HDFS作用</strong><br>    HDFS(Hadoop Distributed File System)是Hadoop项目的核心子项目，是分布式计算中数据存储管理的基础，是基于流数据模式访问和处理超大文件的需求而开发的。它所具备的高容错性、高可靠性、高可扩展性、高吞吐率等特征为海量数据提供了不怕故障的存储。为超大数据集的应用带来了很多便利。<br><a id="more"></a><br><strong>二、HDFS存储数据架构图</strong><br><img src="http://static.zybuluo.com/janedler/6sth8mqivlecsl085mleglev/BA5DD807-078C-4DEA-A7CA-A5F160FC288D.png" alt="BA5DD807-078C-4DEA-A7CA-A5F160FC288D.png-326kB"><br>HDFS采用Master/Slave的架构来存储数据，这种架构主要由四个部分组成，分别是<strong>HDFS Client</strong>、<strong>NameNode</strong>、<strong>DataNode</strong>、<strong>和SecondaryNameNode</strong>。<br>Client：客户端<br>1、文件切分。文件上传HDSF的时候，Client将文件切分成一个一个的Block，然后进行存储。<br>2、与NameNode交互，获取文件的位置信息。<br>3、与DataNode交互，读取或写入数据。<br>4、Client提供一些命令来管理HDFS，比如启动或者关闭HDFS。<br>5、Client可以通过一些命令来访问HDFS。<br>NameNode：master，它是一个主管、管理者。<br>1、管理HDFS的名称空间。<br>2、管理数据库（block）映射信息。<br>3、配置副本策略。<br>4、处理客户端读写请求。<br>DataNode：Slave，NameNode下达命令，DataNode执行实际的操作。<br>1、存储实际的数据块。<br>2、执行数据块的读/写操作。<br>Secondary NameNode：并非NameNode的热备。当NameNode挂掉的时候，它并不能马上替换NameNode并提供服务。<br>1、辅助NameNode，分担其工作量。<br>2、定期合并fsimage和fsedits，并推送给NameNode。<br>3、在紧急情况下，可辅助恢复NameNode。</p>
+<p><strong>三、HDFS写过程</strong><br><img src="http://static.zybuluo.com/janedler/9emw510hpqs9azp40ozl7gfn/F6AAAF4A-647E-40C9-BE07-687764E8D1DF.jpg" alt="F6AAAF4A-647E-40C9-BE07-687764E8D1DF.jpg-25.5kB"><br>例如：客户端发送一个请求给NameNode，说它要将“Hello.log”文件写入到HDFS。<br>第一步：客户端发消息给NameNode，请求将“Hello.log”文件写入。①<br>第二步：NameNode发消息给客户端，叫客户端写到DataNodeA、B和D，并直接联系DataNodeB。②<br>第三步：客户端发消息给DataNodeB，叫它保存一份“Hello.log”文件，并且发送一份副本给DataNodeA和DataNodeD。③<br>第四步：DataNodeB发消息给DataNodeA，叫它保存一份“Hello.log”文件，并发送一份副本给DataNodeD。④<br>第五步：DataNodeA发消息给DataNodeD，叫它保存一份“Hello.log”文件。⑤<br>第六步：DataNodeD发确认消息给DataNodeA。⑤<br>第七步：DataNodeA发确认消息给DataNodeB。④<br>第八步：DataNodeB发确认消息给客户端，表示完成写入。⑥<br>如果保证数据一致性：对于HDFS来说，知道所有要保存的数据在DataNodes确认它们都有文件副本时，数据才被认为写入完成。</p>
+<p><strong>四、HDFS读过程</strong><br><img src="http://static.zybuluo.com/janedler/rrwenlios2ibi46o0qeb9f9d/ED95FA52-06E5-46CB-82B3-4E17B028D099.jpg" alt="ED95FA52-06E5-46CB-82B3-4E17B028D099.jpg-22.2kB"><br>第一步：客户端询问NameNode它应该从哪儿读取文件。①<br>第二步：NameNode发送数据块的信息给客户端。②<br>第三步：客户端检查数据块信息，联系相关的DataNode，请求数据块。③<br>第四步：DataNode返回文件内容给客户端，然后关闭连接，完成读取操作。④<br>客户端并行从不同的DataNode中获取一个文件的数据库，然后联结这些数据块，拼成完整的文件。</p>
+<p><strong>五、通过副本快速恢复硬件故障</strong><br>当一切运行正常时，DataNode会周期性发送心跳信息给NameNode（默认是没3秒钟一次）。如果NameNode在预定时间内没有收到心跳信息（默认是10分钟），它会认为DataNode出问题了，把它从集群中移除，并且启动一个进程去恢复数据。</p>
+<p><strong>六、跨多个DataNode切分文件</strong><br>在HDFS里，文件被切分成数据块，通常每个数据块64MB~128MB，然后每个数据块被写入文件系统。同一个文件的不同数据块不一定保存在相同的DataNode上。这样做的好处是，当对这些文件执行运算时，能够通过并行方式读取和处理文件的不同部分。<br>当客户端准备写文件到HDFS并询问NameNode应该把文件写到哪里时，NameNode会告诉客户端，哪些可以写入数据块的DataNode。写完一批数据块后，客户端会回到NameNode获取新的DataNode列表，把下一批数据块写到新新列表中的DataNode上。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -176,133 +208,106 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2017/08/02/HDFS原理/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/08/02/AndroidAutoLayout源码解析/" class="archive-article-date">
-  	<time datetime="2017-08-02T09:00:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-02</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2017/08/02/AndroidAutoLayout源码解析/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">AndroidAutoLayout源码解析</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/02/AndroidAutoLayout源码解析/">AndroidAutoLayout源码解析</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/17/ProGuard/" class="archive-article-date">
-  	<time datetime="2017-02-18T02:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/17/ProGuard/">ProGuard</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/01/14/Prox-Stub/" class="archive-article-date">
-  	<time datetime="2017-01-15T02:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/01/14/Prox-Stub/">Proxy-Stub</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">设计模式</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -325,8 +330,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
